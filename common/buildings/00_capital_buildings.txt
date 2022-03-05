@@ -327,7 +327,7 @@ building_capital = {
 			}
 		}
 		modifier = {
-			job_administrator_add = 2
+			job_politician_add = 2
 		}
 	}
 
@@ -348,7 +348,7 @@ building_capital = {
 		}
 		modifier = {
 			job_high_priest_add = 1
-			job_administrator_add = 1
+			job_politician_add = 1
 		}
 	}
 
@@ -359,7 +359,7 @@ building_capital = {
 		}
 		modifier = {
 			job_noble_add = 1
-			job_administrator_add = 1
+			job_politician_add = 1
 		}
 	}
 
@@ -370,7 +370,7 @@ building_capital = {
 		}
 		modifier = {
 			job_head_researcher_add = 1
-			job_administrator_add = 1
+			job_politician_add = 1
 		}
 	}
 
@@ -381,7 +381,7 @@ building_capital = {
 		}
 		modifier = {
 			job_merchant_add = 1
-			job_administrator_add = 1
+			job_politician_add = 1
 		}
 	}
 
@@ -567,7 +567,7 @@ building_capital = {
 				is_regular_empire = yes
 			}
 		}
-		text = job_administrator_effect_desc
+		text = job_politician_effect_desc
 	}
 
 	triggered_desc = {
@@ -799,7 +799,7 @@ building_major_capital = {
 			}
 		}
 		modifier = {
-			job_administrator_add = 3
+			job_politician_add = 3
 		}
 	}
 
@@ -821,7 +821,7 @@ building_major_capital = {
 		}
 		modifier = {
 			job_high_priest_add = 1
-			job_administrator_add = 2
+			job_politician_add = 2
 		}
 	}
 
@@ -832,7 +832,7 @@ building_major_capital = {
 		}
 		modifier = {
 			job_noble_add = 1
-			job_administrator_add = 2
+			job_politician_add = 2
 		}
 	}
 
@@ -843,7 +843,7 @@ building_major_capital = {
 		}
 		modifier = {
 			job_head_researcher_add = 1
-			job_administrator_add = 2
+			job_politician_add = 2
 		}
 	}
 
@@ -854,7 +854,7 @@ building_major_capital = {
 		}
 		modifier = {
 			job_merchant_add = 1
-			job_administrator_add = 2
+			job_politician_add = 2
 		}
 	}
 
@@ -943,7 +943,7 @@ building_major_capital = {
 				}
 			}
 		}
-		text = job_administrator_effect_desc
+		text = job_politician_effect_desc
 	}
 
 	triggered_desc = {
@@ -1060,7 +1060,7 @@ building_system_capital = {
 			}
 		}
 		modifier = {
-			job_administrator_add = 4
+			job_politician_add = 4
 		}
 	}
 
@@ -1196,7 +1196,7 @@ building_system_capital = {
 		}
 		modifier = {
 			job_high_priest_add = 2
-			job_administrator_add = 2
+			job_politician_add = 2
 		}
 	}
 
@@ -1207,7 +1207,7 @@ building_system_capital = {
 		}
 		modifier = {
 			job_noble_add = 2
-			job_administrator_add = 2
+			job_politician_add = 2
 		}
 	}
 
@@ -1218,7 +1218,7 @@ building_system_capital = {
 		}
 		modifier = {
 			job_head_researcher_add = 2
-			job_administrator_add = 2
+			job_politician_add = 2
 		}
 	}
 
@@ -1229,7 +1229,7 @@ building_system_capital = {
 		}
 		modifier = {
 			job_merchant_add = 2
-			job_administrator_add = 2
+			job_politician_add = 2
 		}
 	}
 
@@ -1320,7 +1320,7 @@ building_system_capital = {
 				is_regular_empire = yes
 			}
 		}
-		text = job_administrator_effect_desc
+		text = job_politician_effect_desc
 	}
 
 	triggered_desc = {
@@ -1489,7 +1489,6 @@ building_machine_capital = {
 		planet_max_buildings_add = @buildings_t2
 	}
 
- 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1589,8 +1588,6 @@ building_machine_major_capital = {
 		job_maintenance_drone_add = 4
 		planet_max_buildings_add = @buildings_t3
 	}
-
- 
 
 	triggered_planet_modifier = {
 		potential = {
@@ -1703,9 +1700,6 @@ building_machine_system_capital = {
 		job_maintenance_drone_add = 5
 		planet_max_buildings_add = @buildings_t4
 	}
-
- 
-
 	triggered_planet_modifier = {
 		potential = {
 			num_pops >= 10
@@ -2141,7 +2135,6 @@ building_hab_capital = {
 		}
 	}
 
- 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -2168,7 +2161,7 @@ building_hab_capital = {
 				is_regular_empire = yes
 			}
 		}
-		job_administrator_add = 1
+		job_politician_add = 1
 	}
 
 	triggered_planet_modifier = {
@@ -2219,7 +2212,7 @@ building_hab_capital = {
 				is_regular_empire = yes
 			}
 		}
-		text = job_administrator_effect_desc
+		text = job_politician_effect_desc
 	}
 
 	triggered_desc = {
@@ -2328,7 +2321,6 @@ building_hab_major_capital = {
 		planet_max_branch_office_buildings_add = 1
 	}
 
- 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -2408,7 +2400,7 @@ building_hab_major_capital = {
 			}
 		}
 		modifier = {
-			job_administrator_add = 2
+			job_politician_add = 2
 		}
 	}
 
@@ -2428,7 +2420,7 @@ building_hab_major_capital = {
 			owner = { has_civic = civic_exalted_priesthood }
 		}
 		modifier = {
-			job_administrator_add = 1
+			job_politician_add = 1
 			job_high_priest_add = 1
 		}
 	}
@@ -2439,7 +2431,7 @@ building_hab_major_capital = {
 			owner = { has_civic = civic_aristocratic_elite }
 		}
 		modifier = {
-			job_administrator_add = 1
+			job_politician_add = 1
 			job_noble_add = 1
 		}
 	}
@@ -2451,7 +2443,7 @@ building_hab_major_capital = {
 		}
 		modifier = {
 			job_head_researcher_add = 1
-			job_administrator_add = 1
+			job_politician_add = 1
 		}
 	}
 
@@ -2461,7 +2453,7 @@ building_hab_major_capital = {
 			owner = { has_civic = civic_merchant_guilds }
 		}
 		modifier = {
-			job_administrator_add = 1
+			job_politician_add = 1
 			job_merchant_add = 1
 		}
 	}
@@ -2522,7 +2514,7 @@ building_hab_major_capital = {
 				is_regular_empire = yes
 			}
 		}
-		text = job_administrator_effect_desc
+		text = job_politician_effect_desc
 	}
 
 	triggered_desc = {
@@ -2628,8 +2620,6 @@ building_resort_capital = {
 		planet_max_branch_office_buildings_add = 1
 	}
 
- 
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -2658,7 +2648,7 @@ building_resort_capital = {
 				NOT = { has_authority = auth_corporate }
 			}
 		}
-		job_administrator_add = 1
+		job_politician_add = 1
 	}
 
 	triggered_planet_modifier = {
@@ -2678,7 +2668,7 @@ building_resort_capital = {
 				NOT = { has_authority = auth_corporate }
 			}
 		}
-		text = job_administrator_effect_desc
+		text = job_politician_effect_desc
 	}
 
 	triggered_desc = {
@@ -2752,8 +2742,6 @@ building_resort_major_capital = {
 		planet_max_branch_office_buildings_add = 2
 	}
 
- 
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -2782,7 +2770,7 @@ building_resort_major_capital = {
 				NOT = { has_authority = auth_corporate }
 			}
 		}
-		job_administrator_add = 1
+		job_politician_add = 1
 	}
 
 	triggered_planet_modifier = {
@@ -2813,7 +2801,7 @@ building_resort_major_capital = {
 				NOT = { has_authority = auth_corporate }
 			}
 		}
-		text = job_administrator_effect_desc
+		text = job_politician_effect_desc
 	}
 
 	triggered_desc = {
@@ -2876,8 +2864,6 @@ building_slave_capital = {
 		planet_max_branch_office_buildings_add = 1
 	}
 
- 
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -2885,7 +2871,7 @@ building_slave_capital = {
 				NOT = { has_authority = auth_corporate }
 			}
 		}
-		job_administrator_add = 2
+		job_politician_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -2905,7 +2891,7 @@ building_slave_capital = {
 				NOT = { has_authority = auth_corporate }
 			}
 		}
-		text = job_administrator_effect_desc
+		text = job_politician_effect_desc
 	}
 
 	triggered_desc = {
@@ -2976,7 +2962,6 @@ building_slave_major_capital = {
 		planet_max_branch_office_buildings_add = 2
 	}
 
- 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -2984,7 +2969,7 @@ building_slave_major_capital = {
 				NOT = { has_authority = auth_corporate }
 			}
 		}
-		job_administrator_add = 2
+		job_politician_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -3015,7 +3000,7 @@ building_slave_major_capital = {
 				NOT = { has_authority = auth_corporate }
 			}
 		}
-		text = job_administrator_effect_desc
+		text = job_politician_effect_desc
 	}
 
 	triggered_desc = {
@@ -3080,8 +3065,6 @@ building_imperial_capital = {
 		planet_max_branch_office_buildings_add = 4
 	}
 
- 
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -3116,7 +3099,7 @@ building_imperial_capital = {
 			}
 		}
 		modifier = {
-			job_administrator_add = 6
+			job_politician_add = 6
 		}
 	}
 
@@ -3138,7 +3121,7 @@ building_imperial_capital = {
 		}
 		modifier = {
 			job_high_priest_add = 3
-			job_administrator_add = 3
+			job_politician_add = 3
 		}
 	}
 
@@ -3149,7 +3132,7 @@ building_imperial_capital = {
 		}
 		modifier = {
 			job_noble_add = 3
-			job_administrator_add = 3
+			job_politician_add = 3
 		}
 	}
 
@@ -3160,7 +3143,7 @@ building_imperial_capital = {
 		}
 		modifier = {
 			job_head_researcher_add = 3
-			job_administrator_add = 3
+			job_politician_add = 3
 		}
 	}
 
@@ -3171,7 +3154,7 @@ building_imperial_capital = {
 		}
 		modifier = {
 			job_merchant_add = 3
-			job_administrator_add = 3
+			job_politician_add = 3
 		}
 	}
 
@@ -3262,7 +3245,7 @@ building_imperial_capital = {
 				is_regular_empire = yes
 			}
 		}
-		text = job_administrator_effect_desc
+		text = job_politician_effect_desc
 	}
 
 	triggered_desc = {
@@ -3336,9 +3319,6 @@ building_imperial_machine_capital = {
 		planet_max_buildings_add = 11
 		planet_max_branch_office_buildings_add = 3
 	}
-
- 
-
 	triggered_planet_modifier = {
 		potential = {
 			num_pops >= 10
@@ -3471,8 +3451,6 @@ building_imperial_hive_capital = {
 		planet_max_buildings_add = 11
 		planet_max_branch_office_buildings_add = 3
 	}
-
- 
 
 	triggered_planet_modifier = {
 		potential = {

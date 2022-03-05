@@ -591,6 +591,29 @@ col_industrial = {
 col_foundry = {
 	icon = GFX_colony_type_foundry
 
+	# used by AI to estimate what will happen when we change the designation
+	ai_resource_conversion = {
+		consumer_goods = 0
+		alloys = 2 
+		
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
+	ai_resource_current_conversion = {
+		alloys = 0.5
+		consumer_goods = -2
+
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
 	potential = {
 		exists = owner
 		NOR = {
@@ -603,8 +626,8 @@ col_foundry = {
 		is_special_colony_type = no
 	}
 
+	custom_tooltip = col_foundry_custom
 	planet_modifier = {
-		custom_tooltip = col_foundry_custom
 		planet_district_industrial_build_speed_mult = 0.25
 		planet_metallurgists_upkeep_mult = -0.20
 	}
@@ -959,8 +982,8 @@ col_factory = {
 		is_special_colony_type = no
 	}
 
+	custom_tooltip = col_factory_custom
 	planet_modifier = {
-		custom_tooltip = col_factory_custom
 		planet_district_industrial_build_speed_mult = 0.25
 		planet_artisans_upkeep_mult = -0.20
 	}
@@ -1297,6 +1320,7 @@ col_research = {
 	planet_modifier = {
 		planet_building_research_lab_1_build_speed_mult = 0.25
 		planet_researchers_upkeep_mult = -0.2
+
 	}
 
 	weight_modifier = {
@@ -1424,6 +1448,7 @@ col_capital = {
 		planet_stability_add = 5
 		planet_amenities_add = 10
 		pop_government_ethic_attraction = 1
+		planet_jobs_produces_mult = 0.1
 	}
 
 	weight_modifier = {
@@ -1448,6 +1473,7 @@ col_capital_hive = {
 		planet_stability_add = 5
 		planet_amenities_no_happiness_add = 10
 		planet_crime_no_happiness_add = -20
+		planet_jobs_produces_mult = 0.1
 	}
 
 	weight_modifier = {
@@ -1472,8 +1498,7 @@ col_capital_machine = {
 		planet_stability_add = 5
 		planet_amenities_no_happiness_add = 10
 		planet_crime_no_happiness_add = -20
-		planet_jobs_complex_drone_produces_mult = 0.05
-		planet_jobs_simple_drone_produces_mult = 0.05
+		planet_jobs_produces_mult = 0.15
 	}
 
 	weight_modifier = {
@@ -1852,11 +1877,34 @@ col_habitat_industrial = {
 col_habitat_foundry = {
 	icon = GFX_colony_type_habitat_foundry
 
+	# used by AI to estimate what will happen when we change the designation
+	ai_resource_conversion = {
+		consumer_goods = 0
+		alloys = 2 
+		
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
+	ai_resource_current_conversion = {
+		alloys = 0.5
+		consumer_goods = -2
+
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
 	potential = {
 		uses_district_set = habitat
 	}
+	custom_tooltip = col_habitat_foundry_custom
 	planet_modifier = {
-		custom_tooltip = col_habitat_foundry_custom
 		planet_district_hab_industrial_build_speed_mult = 0.25
 		planet_metallurgists_upkeep_mult = -0.2
 	}
@@ -1876,6 +1924,7 @@ col_habitat_foundry = {
 			planet_metallurgists_produces_mult = 0.05
 		}
 	}
+
 	weight_modifier = {
 		base = 0
 		modifier = {
@@ -1929,13 +1978,37 @@ col_habitat_foundry = {
 col_habitat_factory = {
 	icon = GFX_colony_type_habitat_factory
 
+	# used by AI to estimate what will happen when we change the designation
+	ai_resource_conversion = {
+		consumer_goods = 2
+		alloys = 0
+		
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
+	# Used by AI to estimate the current effects of this designation
+	ai_resource_current_conversion = {
+		consumer_goods = 0.5
+		alloys = -0.5
+
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
 	potential = {
 		uses_district_set = habitat
 		exists = owner
 		owner = { country_uses_consumer_goods = yes }
 	}
+	custom_tooltip = col_habitat_factory_custom
 	planet_modifier = {
-		custom_tooltip = col_habitat_factory_custom
 		planet_district_hab_industrial_build_speed_mult = 0.25
 		planet_artisans_upkeep_mult = -0.2
 	}
@@ -1955,6 +2028,7 @@ col_habitat_factory = {
 			planet_artisans_produces_mult = 0.05
 		}
 	}
+
 	weight_modifier = {
 		base = 0
 		modifier = {
@@ -2786,8 +2860,50 @@ col_ecu_industrial = {
 col_ecu_foundry = {
 	icon = GFX_colony_type_foundry
 
+	# used by AI to estimate what will happen when we change the designation
+	ai_resource_conversion = {
+		consumer_goods = 0
+		alloys = 2 
+		
+		trigger = {
+			always = yes
+		}
+	}
+
+	ai_resource_current_conversion = {
+		alloys = 0.5
+		consumer_goods = -2
+
+		trigger = {
+			always = yes
+		}
+	}
+
 	potential = {
 		uses_district_set = city_world
+	}
+
+	# used by AI to estimate what will happen when we change the designation
+	ai_resource_conversion = {
+		consumer_goods = 0
+		alloys = 2 
+		
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
+	ai_resource_current_conversion = {
+		alloys = 0.5
+		consumer_goods = -2
+
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
 	}
 
 	planet_modifier = {
@@ -2849,6 +2965,30 @@ col_ecu_foundry = {
 # Ecumenpolis Factory
 col_ecu_factory = {
 	icon = GFX_colony_type_factory
+
+	# used by AI to estimate what will happen when we change the designation
+	ai_resource_conversion = {
+		consumer_goods = 2
+		alloys = 0
+		
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
+	# Used by AI to estimate the current effects of this designation
+	ai_resource_current_conversion = {
+		consumer_goods = 0.5
+		alloys = -0.5
+
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
 
 	potential = {
 		uses_district_set = city_world
@@ -2985,6 +3125,7 @@ col_mac = {
 
 	weight_modifier = {
 		base = 10
+
 	}
 }
 
@@ -2996,8 +3137,8 @@ col_mac_foundry = {
 		uses_district_set = machine_world
 	}
 
+	custom_tooltip = col_foundry_custom
 	planet_modifier = {
-		custom_tooltip = col_foundry_custom
 		planet_district_industrial_build_speed_mult = 0.25
 		planet_metallurgists_upkeep_mult = -0.2
 	}
@@ -3058,8 +3199,8 @@ col_mac_factory = {
 		owner = { country_uses_consumer_goods = yes }
 	}
 
+	custom_tooltip = col_factory_custom
 	planet_modifier = {
-		custom_tooltip = col_factory_custom
 		planet_district_industrial_build_speed_mult = 0.25
 		planet_artisans_upkeep_mult = -0.2
 	}
@@ -3191,65 +3332,86 @@ col_hiv_foundry = {
 	}
 }
 
-# Bureaucratic Center
+# Unification Center
 
 col_bureau = {
 	icon = GFX_colony_type_bureaucratic
 
 	potential = {
 		exists = owner
-		owner = { is_regular_empire = yes }
-		NOR = {
-			uses_district_set = hive_world
+		owner = {
+			is_regular_empire = yes
+			is_spiritualist = no
+		}
+		NOT = {
 			uses_district_set = habitat
 		}
 		is_special_colony_type = no
 	}
 
 	planet_modifier = {
-		custom_tooltip = col_bureaucracy_custom
-		planet_bureaucrats_upkeep_mult = -0.10
-		pop_ethics_shift_speed_mult = -0.20
+		planet_administrators_produces_mult = 0.10
+		planet_administrators_upkeep_mult = -0.10
 	}
 
 	weight_modifier = {
 		base = 10
 		modifier = {
-			add = 3
-			owner = { empire_sprawl_over_cap > 20 }
-		}
-		modifier = {
-			add = 3
+			add = 5
 			has_designation = col_bureau
 		}
 		modifier = {
-			add = 2
-			num_buildings = { type = building_bureaucratic_1 value >= 2 }
-		}
-		modifier = {
-			add = 2
-			num_buildings = { type = building_bureaucratic_1 value >= 3 }
-		}
-		modifier = {
-			add = 2
-			num_buildings = { type = building_bureaucratic_1 value >= 4 }
-		}
-		modifier = {
-			add = 2
-			num_buildings = { type = building_bureaucratic_1 value >= 5 }
+			add = 3
+			OR = {
+				num_buildings = { type = building_bureaucratic_1 value >= 2 }
+				num_districts = { type = district_arcology_administrative value >= 2 }
+			}
 		}
 		modifier = {
 			add = 4
+			OR = {
+				num_buildings = { type = building_bureaucratic_1 value >= 3 }
+				num_districts = { type = district_arcology_administrative value >= 3 }
+			}
+		}
+		modifier = {
+			add = 5
+			OR = {
+				num_buildings = { type = building_bureaucratic_1 value >= 4 }
+				num_districts = { type = district_arcology_administrative value >= 4 }
+			}
+		}
+		modifier = {
+			add = 6
+			OR = {
+				num_buildings = { type = building_bureaucratic_1 value >= 5 }
+				num_districts = { type = district_arcology_administrative value >= 5 }
+			}
+		}
+		modifier = {
+			add = 5
 			num_buildings = { type = building_bureaucratic_2 value >= 1 }
 		}
 		modifier = {
-			add = 4
+			add = 6
 			num_buildings = { type = building_bureaucratic_2 value >= 2 }
 		}
 		modifier = {
+			add = 6
+			num_buildings = { type = building_bureaucratic_3 value >= 1 }
+		}
+		modifier = {
+			add = 7
+			num_buildings = { type = building_bureaucratic_3 value >= 2 }
+		}
+		modifier = {
 			factor = 0
-			num_buildings = { type = building_bureaucratic_1 value = 0 }
-			num_buildings = { type = building_bureaucratic_2 value = 0 }
+			AND = {
+				num_buildings = { type = building_bureaucratic_1 value = 0 }
+				num_buildings = { type = building_bureaucratic_2 value = 0 }
+				num_buildings = { type = building_bureaucratic_3 value = 0 }
+				num_districts = { type = district_arcology_administrative value = 0 }
+			}
 		}
 		modifier = {
 			factor = 1.3
@@ -3257,28 +3419,272 @@ col_bureau = {
 		}
 	}
 }
-col_habitat_bureau = {
-	icon = GFX_colony_type_hab_bureaucratic
+
+col_bureau_spiritualist = {
+	icon = GFX_colony_type_bureaucratic
 
 	potential = {
 		exists = owner
-		owner = { is_regular_empire = yes }
-		uses_district_set = habitat
+		owner = {
+			is_regular_empire = yes
+			is_spiritualist = yes
+		}
+		NOT = {
+			uses_district_set = habitat
+		}
 		is_special_colony_type = no
 	}
 
 	planet_modifier = {
-		custom_tooltip = col_bureaucracy_custom
-		planet_bureaucrats_upkeep_mult = -0.10
-		pop_ethics_shift_speed_mult = -0.20
+		planet_administrators_produces_mult = 0.10
+		planet_administrators_upkeep_mult = -0.10
 	}
 
 	weight_modifier = {
 		base = 10
 		modifier = {
 			add = 5
-			owner = { empire_sprawl_over_cap > 40 }
+			has_designation = col_bureau_spiritualist
 		}
+		modifier = {
+			add = 3
+			OR = {
+				num_buildings = { type = building_temple value >= 2 }
+				num_buildings = { type = building_sacrificial_temple_1 value >= 2 }
+				num_districts = { type = district_arcology_religious value >= 2 }
+			}
+		}
+		modifier = {
+			add = 4
+			OR = {
+				num_buildings = { type = building_temple value >= 3 }
+				num_buildings = { type = building_sacrificial_temple_1 value >= 3 }
+				num_districts = { type = district_arcology_religious value >= 3 }
+			}
+		}
+		modifier = {
+			add = 5
+			OR = {
+				num_buildings = { type = building_temple value >= 4 }
+				num_buildings = { type = building_sacrificial_temple_1 value >= 4 }
+				num_districts = { type = district_arcology_religious value >= 4 }
+			}
+		}
+		modifier = {
+			add = 6
+			OR = {
+				num_buildings = { type = building_temple value >= 5 }
+				num_buildings = { type = building_sacrificial_temple_1 value >= 5 }
+				num_districts = { type = district_arcology_religious value >= 5 }
+			}
+		}
+		modifier = {
+			add = 5
+			OR = {
+				num_buildings = { type = building_holotemple value >= 1 }
+				num_buildings = { type = building_sacrificial_temple_2 value >= 1 }
+			}
+		}
+		modifier = {
+			add = 6
+			OR = {
+				num_buildings = { type = building_holotemple value >= 2 }
+				num_buildings = { type = building_sacrificial_temple_2 value >= 2 }
+			}
+		}
+		modifier = {
+			add = 6
+			OR = {
+				num_buildings = { type = building_sacred_nexus value >= 1 }
+				num_buildings = { type = building_sacrificial_temple_3 value >= 1 }
+			}
+		}
+		modifier = {
+			add = 7
+			OR = {
+				num_buildings = { type = building_sacred_nexus value >= 2 }
+				num_buildings = { type = building_sacrificial_temple_3 value >= 2 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				num_buildings = { type = building_temple value = 0 }
+				num_buildings = { type = building_sacrificial_temple_1 value = 0 }
+				num_buildings = { type = building_holotemple value = 0 }
+				num_buildings = { type = building_sacrificial_temple_2 value = 0 }
+				num_buildings = { type = building_sacred_nexus value = 0 }
+				num_buildings = { type = building_sacrificial_temple_3 value = 0 }
+				num_districts = { type = district_arcology_religious value = 0 }
+			}
+		}
+		modifier = {
+			factor = 1.3
+			has_planet_flag = str_acceptable_habitability
+		}
+	}
+}
+
+col_bureau_hive = {
+	icon = GFX_colony_type_bureaucratic
+
+	potential = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+		NOT = {
+			uses_district_set = habitat
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_administrators_produces_mult = 0.10
+		planet_administrators_upkeep_mult = -0.10
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			has_designation = col_bureau_hive
+		}
+		modifier = {
+			add = 3
+			num_buildings = { type = building_hive_node value >= 2 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_hive_node value >= 3 }
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_hive_node value >= 4 }
+		}
+		modifier = {
+			add = 6
+			num_buildings = { type = building_hive_node value >= 5 }
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_hive_cluster value >= 1 }
+		}
+		modifier = {
+			add = 6
+				num_buildings = { type = building_hive_cluster value >= 2 }
+		}
+		modifier = {
+			add = 6
+			num_buildings = { type = building_hive_confluence value >= 1 }
+		}
+		modifier = {
+			add = 7
+			num_buildings = { type = building_hive_confluence value >= 2 }
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				num_buildings = { type = building_hive_node value = 0 }
+				num_buildings = { type = building_hive_cluster value = 0 }
+				num_buildings = { type = building_hive_confluence value = 0 }
+			}
+		}
+		modifier = {
+			factor = 1.3
+			has_planet_flag = str_acceptable_habitability
+		}
+	}
+}
+
+col_bureau_machine = {
+	icon = GFX_colony_type_bureaucratic
+
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+		NOT = {
+			uses_district_set = habitat
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_administrators_produces_mult = 0.10
+		planet_administrators_upkeep_mult = -0.10
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			has_designation = col_bureau_machine
+		}
+		modifier = {
+			add = 3
+			num_buildings = { type = building_uplink_node value >= 2 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_uplink_node value >= 3 }
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_uplink_node value >= 4 }
+		}
+		modifier = {
+			add = 6
+			num_buildings = { type = building_uplink_node value >= 5 }
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_network_junction value >= 1 }
+		}
+		modifier = {
+			add = 6
+			num_buildings = { type = building_network_junction value >= 2 }
+		}
+		modifier = {
+			add = 6
+			num_buildings = { type = building_system_conflux value >= 1 }
+		}
+		modifier = {
+			add = 7
+				num_buildings = { type = building_system_conflux value >= 2 }
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				num_buildings = { type = building_bureaucratic_2 value = 0 }
+				num_buildings = { type = building_network_junction value = 0 }
+				num_buildings = { type = building_system_conflux value = 0 }
+			}
+		}
+		#	modifier = {
+		#		factor = 1.3
+		#		has_planet_flag = str_acceptable_habitability
+		#	}
+	}
+}
+
+col_habitat_bureau = {
+	icon = GFX_colony_type_hab_bureaucratic
+
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_spiritualist = no
+		}
+		uses_district_set = habitat
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_administrators_produces_mult = 0.10
+		planet_administrators_upkeep_mult = -0.10
+	}
+
+	weight_modifier = {
+		base = 10
 		modifier = {
 			add = 5
 			has_designation = col_habitat_bureau
@@ -3298,6 +3704,7 @@ col_habitat_bureau = {
 		modifier = {
 			add = 6
 			num_buildings = { type = building_bureaucratic_1 value >= 5 }
+
 		}
 		modifier = {
 			add = 5
@@ -3308,9 +3715,242 @@ col_habitat_bureau = {
 			num_buildings = { type = building_bureaucratic_2 value >= 2 }
 		}
 		modifier = {
+			add = 6
+			num_buildings = { type = building_bureaucratic_3 value >= 1 }
+		}
+		modifier = {
+			add = 7
+			num_buildings = { type = building_bureaucratic_3 value >= 2 }
+		}
+		modifier = {
 			factor = 0
-			num_buildings = { type = building_bureaucratic_1 value = 0 }
-			num_buildings = { type = building_bureaucratic_2 value = 0 }
+			AND = {
+				num_buildings = { type = building_bureaucratic_1 value = 0 }
+				num_buildings = { type = building_bureaucratic_2 value = 0 }
+				num_buildings = { type = building_bureaucratic_3 value = 0 }
+			}
+		}
+	}
+}
+
+col_habitat_bureau_spiritualist = {
+	icon = GFX_colony_type_hab_bureaucratic
+
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_spiritualist = yes
+		}
+		uses_district_set = habitat
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_administrators_produces_mult = 0.10
+		planet_administrators_upkeep_mult = -0.10
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			has_designation = col_habitat_bureau_spiritualist
+		}
+		modifier = {
+			add = 3
+			OR = {
+				num_buildings = { type = building_temple value >= 2 }
+				num_buildings = { type = building_sacrificial_temple_1 value >= 2 }
+			}
+		}
+		modifier = {
+			add = 4
+			OR = {
+				num_buildings = { type = building_temple value >= 3 }
+				num_buildings = { type = building_sacrificial_temple_1 value >= 3 }
+			}
+		}
+		modifier = {
+			add = 5
+			OR = {
+				num_buildings = { type = building_temple value >= 4 }
+				num_buildings = { type = building_sacrificial_temple_1 value >= 4 }
+			}
+		}
+		modifier = {
+			add = 6
+			OR = {
+				num_buildings = { type = building_temple value >= 5 }
+				num_buildings = { type = building_sacrificial_temple_1 value >= 5 }
+			}
+		}
+		modifier = {
+			add = 5
+			OR = {
+				num_buildings = { type = building_holotemple value >= 1 }
+				num_buildings = { type = building_sacrificial_temple_2 value >= 1 }
+			}
+		}
+		modifier = {
+			add = 6
+			OR = {
+				num_buildings = { type = building_holotemple value >= 2 }
+				num_buildings = { type = building_sacrificial_temple_2 value >= 2 }
+			}
+		}
+		modifier = {
+			add = 6
+			OR = {
+				num_buildings = { type = building_sacred_nexus value >= 1 }
+				num_buildings = { type = building_sacrificial_temple_3 value >= 1 }
+			}
+		}
+		modifier = {
+			add = 7
+			OR = {
+				num_buildings = { type = building_sacred_nexus value >= 2 }
+				num_buildings = { type = building_sacrificial_temple_3 value >= 2 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				num_buildings = { type = building_temple value = 0 }
+				num_buildings = { type = building_sacrificial_temple_1 value = 0 }
+				num_buildings = { type = building_holotemple value = 0 }
+				num_buildings = { type = building_sacrificial_temple_2 value = 0 }
+				num_buildings = { type = building_sacred_nexus value = 0 }
+				num_buildings = { type = building_sacrificial_temple_3 value = 0 }
+			}
+		}
+	}
+}
+
+col_habitat_bureau_hive = {
+	icon = GFX_colony_type_hab_bureaucratic
+
+	potential = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+		uses_district_set = habitat
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_administrators_produces_mult = 0.10
+		planet_administrators_upkeep_mult = -0.10
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			has_designation = col_habitat_bureau_hive
+		}
+		modifier = {
+			add = 3
+			num_buildings = { type = building_hive_node value >= 2 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_hive_node value >= 3 }
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_hive_node value >= 4 }
+		}
+		modifier = {
+			add = 6
+			num_buildings = { type = building_hive_node value >= 5 }
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_hive_cluster value >= 1 }
+		}
+		modifier = {
+			add = 6
+				num_buildings = { type = building_hive_cluster value >= 2 }
+		}
+		modifier = {
+			add = 6
+			num_buildings = { type = building_hive_confluence value >= 1 }
+		}
+		modifier = {
+			add = 7
+			num_buildings = { type = building_hive_confluence value >= 2 }
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				num_buildings = { type = building_hive_node value = 0 }
+				num_buildings = { type = building_hive_cluster value = 0 }
+				num_buildings = { type = building_hive_confluence value = 0 }
+			}
+		}
+	}
+}
+
+col_habitat_bureau_machine = {
+	icon = GFX_colony_type_hab_bureaucratic
+
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+		uses_district_set = habitat
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_administrators_produces_mult = 0.10
+		planet_administrators_upkeep_mult = -0.10
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			has_designation = col_habitat_bureau_machine
+		}
+		modifier = {
+			add = 3
+			num_buildings = { type = building_uplink_node value >= 2 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_uplink_node value >= 3 }
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_uplink_node value >= 4 }
+		}
+		modifier = {
+			add = 6
+			num_buildings = { type = building_uplink_node value >= 5 }
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_network_junction value >= 1 }
+		}
+		modifier = {
+			add = 6
+			num_buildings = { type = building_network_junction value >= 2 }
+		}
+		modifier = {
+			add = 6
+			num_buildings = { type = building_system_conflux value >= 1 }
+		}
+		modifier = {
+			add = 7
+				num_buildings = { type = building_system_conflux value >= 2 }
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				num_buildings = { type = building_bureaucratic_2 value = 0 }
+				num_buildings = { type = building_network_junction value = 0 }
+				num_buildings = { type = building_system_conflux value = 0 }
+			}
 		}
 	}
 }

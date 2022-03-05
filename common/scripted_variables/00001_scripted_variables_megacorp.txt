@@ -3,7 +3,7 @@
 # They can be overridden in each normal script file.
 
 
-@special_job_weight = 0.01 # Intentionally very low weight
+@special_job_weight = 0.01 # Intentionally very low weight	
 
 @ruler_job_weight = 10000
 @colonist_job_weight = 2000

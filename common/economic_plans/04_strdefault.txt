@@ -20,8 +20,20 @@ str_early_default_plan = {
 
 	focus = {
 		energy = 10
-		minerals = 100
-		alloys = 30
+		minerals = 150
+		alloys = 35
+	}
+
+	subplan = {
+		potential = {
+			is_catalytic_empire = no
+			has_monthly_income = { resource = food value < 5 }
+		}
+
+		income = {
+			food = 500
+		}
+
 	}
 
 	subplan = {
@@ -31,8 +43,8 @@ str_early_default_plan = {
 	}
 	subplan = {
 		potential = { always = yes }
-		income = { starnet_spice_melange = 100000 }
-		focus = { starnet_spice_melange = 50000 }
+		income = { starnet_spice_melange = 100000}
+		focus = { starnet_spice_melange = 50000}
 	}
 
 	subplan = {
@@ -67,7 +79,7 @@ str_early_default_plan = {
 		}
 
 		income = {
-			food = 45
+			food = 45 
 		}
 
 		focus = {

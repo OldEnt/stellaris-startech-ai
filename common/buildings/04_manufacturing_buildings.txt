@@ -176,6 +176,7 @@ building_foundry_1 = {
 		}
 		text = job_fabricator_effect_desc
 	}
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -241,6 +242,12 @@ building_foundry_2 = {
 			AND = {
 				exists = owner
 				buildings_no_motes = yes
+			}
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_industry_district = no
 			}
 		}
 	}
@@ -466,6 +473,12 @@ building_foundry_3 = {
 				exists = owner
 				buildings_no_motes = yes
 			}
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_industry_district = no
+			}
 		}
 	}
 
@@ -679,6 +692,14 @@ building_factory_1 = {
 		str_factory_allow = yes
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
+		NOT = {
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_industry_district = no
+			}
+		}
 	}
 
 	destroy_trigger = {
@@ -861,7 +882,6 @@ building_factory_2 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-
 			AND = {
 				exists = owner
 				owner = {
@@ -1180,6 +1200,7 @@ building_factory_3 = {
 building_refinery = {
 	base_buildtime = @b2_time
 
+	exempt_from_ai_planet_specialization = yes
 	category = manufacturing
 
 	potential = {
@@ -1292,6 +1313,7 @@ building_refinery = {
 building_chemical_plant = {
 	base_buildtime = @b2_time
 
+	exempt_from_ai_planet_specialization = yes
 	category = manufacturing
 
 	potential = {
@@ -1403,6 +1425,7 @@ building_chemical_plant = {
 building_crystal_plant = {
 	base_buildtime = @b2_time
 
+	exempt_from_ai_planet_specialization = yes
 	category = manufacturing
 
 	potential = {
@@ -1609,6 +1632,12 @@ building_ministry_production = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			buildings_no_motes = yes
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_industry_district = no
+			}
 		}
 	}
 
@@ -1624,7 +1653,7 @@ building_ministry_production = {
 	}
 
 	planet_modifier = {
-		job_administrator_add = 1
+		job_politician_add = 1
 		planet_metallurgists_produces_mult = 0.15
 		planet_artisans_produces_mult = 0.15
 	}
@@ -1668,7 +1697,7 @@ building_ministry_production = {
 	}
 
 	triggered_desc = {
-		text = job_administrator_effect_desc
+		text = job_politician_effect_desc
 	}
 
 	show_tech_unlock_if = {

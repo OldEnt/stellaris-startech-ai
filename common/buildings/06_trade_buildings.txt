@@ -4,6 +4,7 @@
 building_commercial_zone = {
 	base_buildtime = @b1_time
 
+	exempt_from_ai_planet_specialization = no
 	category = trade
 
 	potential = {
@@ -18,6 +19,7 @@ building_commercial_zone = {
 		}
 		NOT = { has_modifier = slave_colony }
 	}
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -136,7 +138,9 @@ building_commercial_megaplex = {
 	}
 
 	allow = {
-		buildings_upgrade_allow = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -210,7 +214,7 @@ building_commercial_megaplex = {
 			OR = {
 				num_unemployed >= 10
 				num_assigned_jobs = {
-					job = servant
+				job = servant
 					value >= 10
 				}
 			}
@@ -230,8 +234,13 @@ building_galactic_stock_exchange = {
 	}
 
 	allow = {
-		buildings_simple_allow = yes
 		has_major_upgraded_capital = yes
+		owner = {
+			OR = {
+				is_ai = no
+				is_megacorp = yes		
+			}
+		}
 	}
 
 	destroy_trigger = {
@@ -284,6 +293,7 @@ building_galactic_stock_exchange = {
 			}
 		}
 	}
+	
 	ai_resource_production = {
 		energy = 3
 		trigger = {
