@@ -1,6 +1,47 @@
 # See traditions/README.txt for format
 
 #################
+# OVERLORD ASCENSION PERKS
+#################
+
+ap_lord_of_war = {
+	potential = {
+		host_has_dlc = "Overlord"
+		NOT = { has_ascension_perk = ap_lord_of_war }
+		NOR = {
+			has_ethic = ethic_gestalt_consciousness
+			has_valid_civic = civic_fanatic_purifiers
+		}
+	}
+
+	on_enabled ={
+		custom_tooltip = ap_lord_of_war_tooltip
+	}
+
+	modifier = {
+		country_enclave_capacity_add = 1
+		diplo_weight_naval_mult = 0.25
+		#Bonus to dividends frequency handled in the dividends situation.
+	}
+
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 2
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 2
+			has_authority = auth_corporate
+		}
+	}
+}
+
+#################
 # NEMESIS ASCENSION PERKS
 #################
 
@@ -47,17 +88,16 @@ ap_become_the_crisis = {
 		factor = 7.5
 		modifier = {
 			factor = 0
-			nor = {
+			NOR = {
 				is_militarist = yes
 				is_xenophobe = yes
 				is_gestalt = yes
-				and = {
+				AND = {
 					is_authoritarian = yes
 					is_spiritualist = yes
 				}
 			}
 		}
-
 		modifier = {
 			factor = 10
 			is_homicidal = yes
@@ -114,7 +154,7 @@ ap_become_the_crisis = {
 		}
 		modifier = {
 			factor = 0
-			count_country = {
+			count_playable_country = {
 				count > 2
 				limit = {
 					has_ascension_perk = ap_become_the_crisis
@@ -123,7 +163,7 @@ ap_become_the_crisis = {
 		}
 		modifier = {
 			factor = 0
-			count_country = {
+			count_playable_country = {
 				count > 1
 				limit = {
 					has_ascension_perk = ap_become_the_crisis
@@ -338,6 +378,18 @@ ap_colossus = {
 			factor = 2
 			is_militarist = yes
 		}
+		modifier = {
+			factor = 2
+			has_authority = auth_machine_intelligence #just because
+		}
+		modifier = {
+			factor = 2
+			has_ascension_perk = ap_become_the_crisis
+		}
+		modifier = {
+			factor = 0
+			has_crisis_level = crisis_level_5
+		}
 	}
 }
 
@@ -384,6 +436,10 @@ ap_engineered_evolution = {
 		custom_tooltip = {
 			fail_text = "requires_not_ap_mind_over_matter"
 			NOT = { has_ascension_perk = ap_mind_over_matter }
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_shroudwalker_apprentice"
+			NOT = { has_origin = origin_shroudwalker_apprentice }
 		}
 	}
 	modifier = {
@@ -520,6 +576,10 @@ ap_the_flesh_is_weak = {
 		custom_tooltip = {
 			fail_text = "requires_not_ap_mind_over_matter"
 			NOT = { has_ascension_perk = ap_mind_over_matter }
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_shroudwalker_apprentice"
+			NOT = { has_origin = origin_shroudwalker_apprentice }
 		}
 	}
 
@@ -669,8 +729,9 @@ ap_mind_over_matter = {
 
 	potential = {
 		host_has_dlc = "Utopia"
-		NOT = {
+		NOR = {
 			has_ascension_perk = ap_mind_over_matter
+			has_origin = origin_shroudwalker_apprentice
 			has_authority = "auth_machine_intelligence"
 		}
 		is_mechanical_empire = no
@@ -687,6 +748,11 @@ ap_transcendence = {
 		custom_tooltip = "transcendence_tooltip"
 		hidden_effect = {
 			country_event = { id = utopia.2650 }
+			country_event = {
+				id = enclave.7000
+				days = 360
+				random = 720
+			}
 		}
 	}
 	modifier = {
@@ -708,8 +774,15 @@ ap_transcendence = {
 			num_ascension_perks > 1
 		}
 		custom_tooltip = {
+			fail_text = "requires_technology_psionic_theory"
+			has_technology = tech_psionic_theory
+		}
+		custom_tooltip = {
 			fail_text = "requires_ap_mind_over_matter"
-			has_ascension_perk = ap_mind_over_matter
+			OR = {
+				has_ascension_perk = ap_mind_over_matter
+				has_origin = origin_shroudwalker_apprentice
+			}
 		}
 	}
 
@@ -984,6 +1057,10 @@ ap_grasp_the_void = {
 			fail_text = "requires_ascension_perks_1"
 			num_ascension_perks > 0
 		}
+	}
+
+	on_enabled = {
+		custom_tooltip = "ap_grasp_the_void_tech_effect"
 	}
 
 	modifier = {
@@ -1282,10 +1359,15 @@ ap_transcendent_learning = {
 }
 
 ap_shared_destiny = {
+	on_enabled = {
+		custom_tooltip = "ap_shared_destiny_effect"
+		hidden_effect = {
+			country_event = { id = action.446 }
+		}
+	}
+
 	modifier = {
 		envoys_add = 2
-		subject_integration_influence_cost_mult = -0.5
-		country_subject_trust_cap_add = 100
 	}
 
 	potential = {
@@ -1294,7 +1376,6 @@ ap_shared_destiny = {
 			has_valid_civic = civic_hive_devouring_swarm
 			has_valid_civic = civic_inwards_perfection
 			has_valid_civic = civic_machine_terminator
-			has_authority = auth_corporate
 		}
 		NOT = {
 			has_ascension_perk = ap_shared_destiny
