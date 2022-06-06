@@ -19,3 +19,6 @@
 #If you change the trucetimer make it TRUCE - 10
 @str_ai_prioritise_research_until = 32
 @str_ai_prioritise_energy_for_fleet_after = 30
+
+# The following variable can be used to determine whether StarNet (1) or StarTech (2) is loaded. Always trigger check with equal.
+@str_or_tech_fork_switch = 2
