@@ -1,4 +1,3 @@
-
 minerals_emergency = {
 	or = {
 		resource_income_compare = {
@@ -103,12 +102,18 @@ science_priority = {
 				value > 3500
 			}
 		}
-		years_passed < @str_ai_prioritise_research_until
+		and = {
+			str_is_startech_loaded = yes
+			years_passed < @str_ai_prioritise_research_until
+		}
 	}
 }
 
 alloy_priority = {
-	years_passed > @str_ai_prioritise_research_until
+	and = {
+		str_is_startech_loaded = yes
+		years_passed > @str_ai_prioritise_research_until
+	}
 	or = {
 		used_naval_capacity_percent < 0.5
 		and = {

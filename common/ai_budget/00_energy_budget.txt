@@ -572,6 +572,7 @@ energy_upkeep_fleetbuilding = {
 	type = upkeep
 	category = country
 	potential = {
+		str_is_startech_loaded = yes
 		years_passed > @str_years_of_guaranteed_truce
 		used_naval_capacity_percent < 0.6
 	}
