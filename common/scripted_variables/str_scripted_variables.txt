@@ -3,16 +3,15 @@
 
 @str_years_of_guaranteed_truce = 35
 @str_years_of_extended_truce = 40
-@str_years_of_twilight = 44
 
 #This one determines when AI is allowed to declare war
+@str_years_of_twilight = 44
 @str_ai_will_not_declare_war_until = 40
 @str_ai_will_not_declare_war_until_aggressive = 43
 @str_ai_will_not_declare_war_until_normal = 46
 @str_ai_will_not_declare_war_until_turtles = 50
 
-
-#This one determines when AI cares almost exclusively about science instead of the alloys for shipbuilding
+#This one determines when AI cares almost exclusively about science instead of the alloys for shipbuilding.
 #If you change the trucetimer make it TRUCE - 10
 @str_ai_prioritise_research_until = 32
 @str_ai_prioritise_energy_for_fleet_after = 30
