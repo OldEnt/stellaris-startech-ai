@@ -1,31 +1,31 @@
 #These determine when AI will be building military ships
 #If you decide to change the trucetimer keep them 5 years apart with @years_of_extended_truce = @str_ai_will_not_declare_war_until
 
-@str_years_of_guaranteed_truce = 10
-@str_years_of_extended_truce = 30
+@str_years_of_guaranteed_truce = 35
+@str_years_of_extended_truce = 40
 
 #This one determines when AI is allowed to declare war
-@str_years_of_twilight = 35
-@str_ai_will_not_declare_war_until = 10
-@str_ai_will_not_declare_war_until_aggressive = 11
-@str_ai_will_not_declare_war_until_normal = 12
-@str_ai_will_not_declare_war_until_turtles = 13
+@str_years_of_twilight = 44
+@str_ai_will_not_declare_war_until = 40
+@str_ai_will_not_declare_war_until_aggressive = 43
+@str_ai_will_not_declare_war_until_normal = 46
+@str_ai_will_not_declare_war_until_turtles = 50
 
 #This one determines when AI cares almost exclusively about science instead of the alloys for shipbuilding.
 #If you change the trucetimer make it TRUCE - 10
-@str_ai_prioritise_research_until = 10
-@str_ai_prioritise_energy_for_fleet_after = 10
+@str_ai_prioritise_research_until = 32
+@str_ai_prioritise_energy_for_fleet_after = 30
 
 # The following variable can be used to determine whether StarNet (1) or StarTech (2) is loaded. Always trigger check with equal.
-@str_or_tech_fork_switch = 1
+@str_or_tech_fork_switch = 2
 
 # Base income for str_early_default_plan economic plan. Differs between StarNet and StarTech. When overwriting these values use FIOS overwrite instead of full file overwrite, otherwise StarNet may not detect properly whether StarNet or StarTech is running.
 @str_early_default_plan_income_energy = 50
-@str_early_default_plan_income_minerals = 200
-@str_early_default_plan_income_alloys = 40
-@str_early_default_plan_income_physics_research = 150
-@str_early_default_plan_income_society_research = 150
-@str_early_default_plan_income_engineering_research = 150
+@str_early_default_plan_income_minerals = 150
+@str_early_default_plan_income_alloys = 45
+@str_early_default_plan_income_physics_research = 200
+@str_early_default_plan_income_society_research = 200
+@str_early_default_plan_income_engineering_research = 200
 @str_early_default_plan_income_exotic_gases = 5
 @str_early_default_plan_income_volatile_motes = 5
 @str_early_default_plan_income_rare_crystals = 5
