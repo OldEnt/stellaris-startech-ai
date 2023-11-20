@@ -1,4 +1,4 @@
-version="3.9"
+version="3.10"
 tags={
 	"Buildings"
 	"Diplomacy"
@@ -8,5 +8,5 @@ tags={
 }
 picture="thumbnail.png"
 name="StarTech AI"
-supported_version="3.9.*"
+supported_version="3.10.*"
 remote_file_id="2494712590"
